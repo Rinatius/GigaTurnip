@@ -140,7 +140,7 @@ class TranslationAdapterTest(GigaTurnipTestHelper):
         self.assertEqual(keys.count(), 4)
 
         self.assertEqual(
-            list(keys.values_list("text", flat=True).order_by("text")),
+            sorted(list(keys.values_list("text", flat=True).order_by("text"))),
             sorted(texts)
         )
         self.assertEqual(TranslateKey.objects.all().count(), 4)
@@ -186,7 +186,7 @@ class TranslationAdapterTest(GigaTurnipTestHelper):
         self.assertEqual(keys.count(), 4)
 
         self.assertEqual(
-            list(keys.values_list("text", flat=True).order_by("text")),
+            sorted(list(keys.values_list("text", flat=True).order_by("text"))),
             sorted(texts)
         )
         self.assertEqual(TranslateKey.objects.all().count(), 4)
